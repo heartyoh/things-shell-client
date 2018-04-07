@@ -1,0 +1,34 @@
+:host {
+  display: block;
+}
+
+app-drawer-layout:not([narrow]) [drawer-toggle] {
+  display: none;
+}
+
+shell-drawer {
+  height: 100%;
+  -webkit-overflow-scrolling: touch;
+}
+
+iron-pages {
+  height: 100%;
+
+  display: flex;
+  flex-direction: column;
+}
+
+iron-pages > * {
+  flex: 1;
+}
+
+.meta {
+  pointer-events: none;
+  font-size: 0.5em;
+  opacity: 0.5;
+  user-select: none;
+  cursor: default;
+  position: fixed;
+  bottom: 8px;
+  right: 8px;
+}

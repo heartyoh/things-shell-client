@@ -1,0 +1,33 @@
+:host {
+  display: flex;
+  flex-direction: column;
+}
+
+#list {
+  flex: 1;
+
+  display: flex;
+  flex-direction: row;
+}
+
+sortable-js {
+  flex: 1;
+
+  padding: 16px;
+  margin: 0;
+  overflow-y: auto;
+
+  display: grid;
+
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  grid-auto-rows: minmax(200px, 220px);
+  grid-gap: 16px;
+}
+
+paper-input {
+  font-size: 0.5em;
+
+  --paper-input-container-color: lightgray;
+  --paper-input-container-focus-color: lightgray;
+  --paper-input-container-input-color: white;
+}

@@ -1,0 +1,53 @@
+fieldset {
+  @apply(--things-fieldset);
+}
+
+fieldset legend {
+  @apply(--things-fieldset-legend);
+}
+
+.property-grid {
+  display: grid;
+  grid-template-columns: repeat(10, 1fr);
+  grid-gap: 5px;
+  grid-auto-rows: minmax(24px, auto);
+}
+
+.property-grid > * {
+  line-height: 1.5;
+}
+
+.property-full-label {
+  grid-column: span 3;
+  text-align: right;
+  text-transform: capitalize;
+}
+
+.property-half-label {
+  grid-column: span 1;
+}
+
+.property-full-input {
+  grid-column: span 7;
+}
+
+.property-half-input {
+  grid-column: span 4;
+}
+
+paper-slider {
+  width: 100%;
+}
+
+.btn-group paper-button {
+  @apply(--things-editor-buttons-radio-button);
+  background:url(./assets/images/icon-properties.png) no-repeat;
+  background-size:70%;
+}
+.btn-group paper-button.tbold         {background-position:50% -170px}
+.btn-group paper-button.titalic       {background-position:50% -205px}
+.btn-group paper-button.tunderline    {background-position:50% -240px}
+.btn-group paper-button.tstrikethrough{background-position:50% -415px}
+.btn-group paper-button[active]{
+  border-color:#f2471c;
+}

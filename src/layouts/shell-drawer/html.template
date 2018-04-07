@@ -1,0 +1,65 @@
+<app-toolbar>
+  <img src="assets/logo.png" on-click="onClickLogo" logo></img>
+  <h3 main-title>&nbsp;Things Board</h3>
+</app-toolbar>
+
+<app-toolbar class="setting-menu" on-click="onRouteSetting">
+  <paper-icon-button data-route="setting-font" icon="icons:font-download"></paper-icon-button>
+  <paper-icon-button data-route="setting-datasource" icon="icons:cloud-done"></paper-icon-button>
+  <paper-icon-button data-route="setting-publisher" icon="icons:cloud-download"></paper-icon-button>
+  <paper-icon-button data-route="setting-security" icon="hardware:security"></paper-icon-button>
+</app-toolbar>
+
+<paper-listbox>
+  <recent-updated-card></recent-updated-card>
+
+  <template is="dom-repeat" items="[[boardGroupList]]">
+    <group-card group="[[item]]" on-drop="onCardDrop" on-dragover="onCardDragOver"
+      on-dragleave="onCardDragLeave"></group-card>
+  </template>
+
+  <template is="dom-repeat" items="[[boardPlayGroupList]]">
+    <playgroup-card group="[[item]]" on-drop="onCardDrop" on-dragover="onCardDragOver"
+      on-dragleave="onCardDragLeave"></playgroup-card>
+  </template>
+</paper-listbox>
+
+<div id="new-group">
+  <span>
+    <things-i18n-msg msgid="label.click-to-add-new-group"></things-i18n-msg>
+  </span>
+  <paper-icon-button icon="av:add-to-queue" on-click="onClickNewGroup"></paper-icon-button>
+</div>
+
+<paper-dialog id="new-group-dialog" entry-animation="scale-up-animation"
+  exit-animation="fade-out-animation" on-iron-overlay-closed="onNewGroupDialogClosed"
+  no-overlap>
+
+  <h2>
+    <things-i18n-msg msgid="label.new-group">New Group</things-i18n-msg>
+  </h2>
+  <paragraph>
+    <things-i18n-msg msgid="label.pls-name-group">Please, give a name for the new group.</things-i18n-msg>
+  </paragraph>
+
+  <things-i18n-msg msgid="label.name" msg="{{lName}}" hidden></things-i18n-msg>
+  <things-i18n-msg msgid="label.description" msg="{{lDescription}}"
+    hidden></things-i18n-msg>
+
+  <paper-input label="[[lName]]" value="{{newGroupName}}"></paper-input>
+  <paper-textarea label="[[lDescription]]" rows=1 value="{{newGroupDescription}}"></paper-textarea>
+
+  <paper-radio-group selected="{{newGroupType}}">
+    <paper-radio-button name="group">Group</paper-radio-button>
+    <paper-radio-button name="play-group">Play Group</paper-radio-button>
+  </paper-radio-group>
+
+  <div class="buttons">
+    <paper-button dialog-dismiss>
+      <things-i18n-msg msgid="label.cancel">Cancel</things-i18n-msg>
+    </paper-button>
+    <paper-button dialog-confirm autofocus>
+      <things-i18n-msg msgid="label.accept">Accept</things-i18n-msg>
+    </paper-button>
+  </div>
+</paper-dialog>

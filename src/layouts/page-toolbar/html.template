@@ -1,0 +1,22 @@
+<app-toolbar>
+
+  <img src="assets/logo.png" on-click="onDrawerToggler" hidden=[[!drawerCollapsed]]
+    logo></img>
+  <span class="space"></span>
+
+  <slot></slot>
+  <div class="padding"></div>
+  <iron-icon icon="social:person" title="acting" user></iron-icon>
+  <paper-menu-button>
+    <paper-button label="user" slot="dropdown-trigger">[[user.name]]</paper-button>
+    <paper-listbox slot="dropdown-content">
+      <!-- <paper-item>settings</paper-item>
+      <paper-item>logout</paper-item>
+      <paper-item>help</paper-item> -->
+      <paper-item on-click="onChangeLocale" locale="en-US">English</paper-item>
+      <paper-item on-click="onChangeLocale" locale="ko-KR">한글</paper-item>
+      <paper-item on-click="onChangeLocale" locale="zh-CN">中文</paper-item>
+    </paper-listbox>
+  </paper-menu-button>
+
+</app-toolbar>

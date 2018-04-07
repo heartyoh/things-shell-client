@@ -1,0 +1,62 @@
+:host {
+  display: block;
+}
+
+app-toolbar {
+  @apply(--app-toolbar);
+  margin: 0px;
+  padding: 0px;
+}
+
+paper-menu-button {
+  padding-left: 0px;
+}
+
+paper-button {
+  font-size: 14px;
+  margin: 0px;
+  padding: 0px;
+  vertical-align: middle;
+}
+
+.padding {
+  flex: 1;
+}
+
+::slotted(paper-icon-button) {
+  --paper-icon-button-ink-color: white;
+
+  padding: 4px;
+  width: 25px;
+  height: 25px;
+}
+
+::slotted(label) {
+  margin-right:5px;
+  color:#fff;
+  font-size:20px;
+}
+
+::slotted(.vline) {
+  display:block;
+  border-left:1px solid rgba(255,255,255,.07);
+  border-right:1px solid rgba(0,0,0,.1);
+  width:0px;height:18px;
+  margin:0 4px;
+}
+
+[logo] {
+  width: 45px;
+  height: 45px;
+}
+
+span.space {
+  width: 10px;
+}
+
+[user] {
+  border-radius: 50%;
+  background-color: var(--secondary-color);
+  padding: 2px;
+  margin: 2px;
+}

@@ -1,0 +1,38 @@
+label {
+  display: block;
+  margin: 10px;
+
+  text-align: right;
+  font-size:1.0em;
+  color:#e46c2e;
+  text-transform:capitalize;
+}
+
+legend {
+  @apply(--things-fieldset-legend);
+}
+
+#pattern-set paper-button {
+  background:url('/assets/images/icon-properties-ipattern.png') no-repeat;
+  display:block;
+  float:left;
+  margin:0 7px 10px 0 !important;
+  width:55px;
+  height:40px;
+  min-width:inherit;
+}
+
+#pattern-set paper-button iron-icon {
+  display:none;
+}
+
+#pattern-set paper-button[data-value="+u+s"]{background-position:50% 3px}
+#pattern-set paper-button[data-value="+u-s"]{background-position:50% -97px}
+#pattern-set paper-button[data-value="-u+s"]{background-position:50% -197px}
+#pattern-set paper-button[data-value="-u-s"]{background-position:50% -297px}
+#pattern-set paper-button[data-value="+s+u"]{background-position:50% -397px}
+#pattern-set paper-button[data-value="+s-u"]{background-position:50% -497px}
+#pattern-set paper-button[data-value="-s+u"]{background-position:50% -597px}
+#pattern-set paper-button[data-value="-s-u"]{background-position:50% -697px}
+#pattern-set paper-button[data-value="cw"]  {background-position:50% -797px}
+#pattern-set paper-button[data-value="ccw"] {background-position:50% -897px}

@@ -1,0 +1,57 @@
+<page-toolbar>
+</page-toolbar>
+
+<div id="player-area" on-keydown="_onKeydown" on-tap="_onTap"
+  on-mousemove="_onMousemove" on-transform="_onTransform" tabindex="-1">
+  <template is="dom-if" if="[[_isSame(transition, 'flip-card')]]"
+    restamp>
+    <things-player-flipcard axis="y" player>
+      <things-scene-player front scene-id="[[boardIds.0]]" fit="both"
+        provider="[[provider]]">
+      </things-scene-player>
+      <things-scene-player back scene-id="[[boardIds.1]]" fit="both"
+        provider="[[provider]]">
+      </things-scene-player>
+    </things-player-flipcard>
+  </template>
+
+  <template is="dom-if" if="[[_isSame(transition, 'flip-card2')]]"
+    restamp>
+    <things-player-flipcard-edge axis="y" player>
+      <things-scene-player front scene-id="[[boardIds.0]]" fit="both"
+        provider="[[provider]]">
+      </things-scene-player>
+      <things-scene-player back scene-id="[[boardIds.1]]" fit="both"
+        provider="[[provider]]">
+      </things-scene-player>
+    </things-player-flipcard-edge>
+  </template>
+
+  <template is="dom-if" if="[[_isSame(transition, 'carousel')]]"
+    restamp>
+    <things-player-carousel axis="y" backface-visibility=false player>
+      <template is='dom-repeat' items="[[boardIds]]">
+        <things-scene-player page scene-id="[[item]]" fit="both" provider="[[provider]]">
+        </things-scene-player>
+      </template>
+    </things-player-carousel>
+  </template>
+
+  <template is="dom-if" if="[[_isSame(transition, 'grid')]]" restamp>
+    <things-player-grid column="3" player>
+      <template is='dom-repeat' items="[[boardIds]]">
+        <things-scene-player page scene-id="[[item]]" fit="both" provider="[[provider]]">
+        </things-scene-player>
+      </template>
+    </things-player-grid>
+  </template>
+</div>
+
+<paper-fab id="fab" direction="top" on-mouseover="_onMouseoverFab"
+  icon="fullscreen" title="full screen" on-tap="_onTapFullscreen"></paper-fab>
+
+<board-player-dialog id="setting-dialog" transition="{{transition}}"
+  playtime="{{playtime}}" entry-animation="scale-up-animation"
+  exit-animation="fade-out-animation" on-iron-overlay-closed="_onSettingDialogClosed"
+  no-overlap>
+</board-player-dialog>

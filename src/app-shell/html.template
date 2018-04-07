@@ -1,0 +1,43 @@
+<firebase-app app="{{app}}" name="fireboard" api-key="AIzaSyBBFPdeHS9j42DGyWpu3XHW8FIERrbk93A"
+  auth-domain="fireboard-17fb1.firebaseapp.com" database-url="https://fireboard-17fb1.firebaseio.com"
+  storage-bucket="fireboard-17fb1.appspot.com" messaging-sender-id="887850237526">
+</firebase-app>
+
+<app-location route="{{appRoute}}">
+</app-location>
+
+<app-route route="{{appRoute}}" pattern="[[rootPattern]]:page"
+  data="{{routeData}}" tail="{{subroute}}">
+</app-route>
+
+<things-provider ref-provider="{{provider}}">
+</things-provider>
+
+<app-drawer-layout id="drawerlayout" fullbleed narrow="{{narrow}}"
+  disable-swipe>
+  <!-- Drawer content -->
+  <app-drawer slot="drawer" opened="{{drawerOpened}}">
+    <shell-drawer></shell-drawer>
+  </app-drawer>
+
+  <!-- Main content -->
+  <iron-pages class="flex" selected="[[page]]" attr-for-selected="name"
+    fallback-selection="view404" role="main">
+    <board-list name="list-recent"></board-list>
+    <board-list name="list-by-group"></board-list>
+    <board-list name="list-by-playgroup"></board-list>
+    <board-modeler name="modeler" model="[[model]]" provider="[[provider]]"></board-modeler>
+    <board-viewer name="viewer" provider="[[provider]]"></board-viewer>
+    <board-info name="info"></board-info>
+    <board-player name="player" provider="[[provider]]"></board-player>
+    <setting-font name="setting-font"></setting-font>
+    <setting-datasource name="setting-datasource"></setting-datasource>
+    <setting-publisher name="setting-publisher"></setting-publisher>
+    <setting-security name="setting-security"></setting-security>
+  </iron-pages>
+
+</app-drawer-layout>
+
+<aside class="meta">
+  [[localize('env-mention', 'version', appVersion, 'env', ENV)]]
+</aside>

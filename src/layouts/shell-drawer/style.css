@@ -1,0 +1,48 @@
+:host {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+app-toolbar {
+  @apply(--app-toolbar);
+  padding: 0;
+}
+
+app-toolbar.setting-menu {
+  background-color: var(--secondary-color);
+}
+
+[logo] {
+  width: 45px;
+  height: 45px;
+}
+
+paper-listbox {
+  flex: 1;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  padding: 0px;
+}
+
+#new-group-dialog {
+  min-width: 300px;
+}
+
+#new-group {
+  position: absolute;
+  bottom: 0;
+  right: 12px;
+}
+
+#new-group span {
+  pointer-events: none;
+  font-size: 0.7em;
+  cursor: default;
+  opacity: 0.5;
+  user-select: none;
+}
+
+#new-group paper-icon-button {
+  color: gray;
+}

@@ -1,0 +1,105 @@
+#card {
+  position: relative;
+
+  padding: 0;
+  margin: 0;
+  height: 100%;
+
+  -webkit-transform-style: preserve-3d;
+          transform-style: preserve-3d;
+  -webkit-transition: all 0.5s ease-in-out;
+          transition: all 0.5s ease-in-out;
+}
+
+:host(.flipped) > #card {
+  -webkit-transform: rotateX(180deg);
+          transform: rotateX(180deg);
+}
+
+#card > [front], #card > [back] {
+  position: absolute;
+
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  background: white;
+
+  border-radius: 5px;
+  background-color: #fff;
+  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12), 0 3px 1px -2px rgba(0, 0, 0, 0.2);
+
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+}
+
+#card > [back] {
+  -webkit-transform: rotateX(180deg);
+          transform: rotateX(180deg);
+}
+
+#info {
+  padding: 10px;
+}
+
+h1 {
+  display: inline;
+  color: #212121;
+  font-weight: normal;
+  font-size: 0.9em;
+}
+
+h5 {
+  margin: 0;
+  font-size: 0.8em;
+  font-weight: normal;
+  color: #757575;
+}
+
+p {
+  margin: 0;
+  display: inline;
+  font-size: 0.7em;
+  color: #757575;
+}
+
+img {
+  display: block;
+  height: 88%;
+  max-width: 100%;
+  margin: auto;
+}
+
+div.name {
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+  padding: 0 10px 0 10px;
+  background: lightgray;
+  box-sizing: border-box;
+}
+
+iron-icon {
+  position: absolute;
+  color: gray;
+  bottom: 3px;
+  right: 3px;
+  width: 16px;
+  height: 16px;
+  padding: 5px;
+  border-radius: 50%;
+}
+
+iron-icon[create] {
+  background: lightgray;
+  color: black;
+  padding: 5px;
+  width: 24px;
+  height: 24px;
+  top: 4px;
+}
+
+iron-icon:hover {
+  background-color: darkgray;
+  color: white;
+}

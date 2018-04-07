@@ -1,0 +1,52 @@
+fieldset {
+  @apply(--things-fieldset);
+}
+
+fieldset legend {
+  @apply(--things-fieldset-legend);
+}
+
+.property-grid {
+  display: grid;
+  grid-template-columns: repeat(10, 1fr);
+  grid-gap: 5px;
+  grid-auto-rows: minmax(24px, auto);
+}
+
+.property-grid > * {
+  line-height: 1.5;
+}
+
+.property-grid input[type=checkbox] {
+  grid-column: 4 / 5;
+}
+
+.property-grid > label.checkbox-label {
+  grid-column: span 6;
+  text-align: left;
+}
+
+.property-grid > label {
+  grid-column: span 3;
+  text-align: right;
+  text-transform: capitalize;
+}
+
+.property-grid > input, .property-grid > select, .property-grid > things-editor-number-input {
+  grid-column: span 7;
+}
+
+things-editor-buttons-radio paper-button{
+  background:url(./assets/images/icon-properties.png) no-repeat;
+}
+
+things-editor-buttons-radio paper-button[data-value="rotation"]   {background: url(https://cdn0.iconfinder.com/data/icons/rotation/154/rotate-rotation-arrow-object-512.png) center/80% no-repeat;}
+things-editor-buttons-radio paper-button[data-value="vibration"]   {background: url(https://cdn0.iconfinder.com/data/icons/phone-communication-glyph-black-ii/2048/476_-_Vibration_mode-512.png) center/80% no-repeat;}
+things-editor-buttons-radio paper-button[data-value="heartbeat"]   {background: url(https://cdn2.iconfinder.com/data/icons/medicine-5-1/512/pulse-512.png) center/80% no-repeat;}
+things-editor-buttons-radio paper-button[data-value="move"]   {background: url(https://cdn2.iconfinder.com/data/icons/designers-and-developers-icon-set/32/drag_and_drop-512.png) center/80% no-repeat;}
+things-editor-buttons-radio paper-button[data-value="vertical"]   {background: url(https://cdn0.iconfinder.com/data/icons/cosmo-player/40/swap_vertical_1-512.png) center/80% no-repeat;}
+things-editor-buttons-radio paper-button[data-value="horizontal"]   {background: url(https://cdn4.iconfinder.com/data/icons/epic-outlines/30/enlarge_horizontal-512.png) center/80% no-repeat;}
+things-editor-buttons-radio paper-button[data-value="rotate"]   {background: url(https://cdn0.iconfinder.com/data/icons/rotation/154/rotate-rotation-arrow-object-512.png) center/80% no-repeat;}
+things-editor-buttons-radio paper-button[active]{
+  border-color:#f2471c;
+}
